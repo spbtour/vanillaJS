@@ -1,0 +1,68 @@
+<html>
+    <head>
+    <title>Clocktest</title>
+    </head>
+
+    <body>
+        <div id = 'circle'>
+            <div id = 'second' class = "stick"></div>
+            <div id = 'minute' class = "stick"></div>
+            <div id = 'hour' class = "stick"></div>
+        </div>
+
+    </body>
+    <style>
+        .stick{
+            height:5px;
+            width: 250px;
+            background: black;
+            position: relative;
+            top: 250px;
+            transform: rotate(90deg);
+            transform-origin: 100%;
+            transition: all 0.05s;
+            transition-timing-function: ease-in-out;
+        }
+        #circle{
+            border-style:dotted;
+            border-radius: 50%;
+            height: 500px;
+            width: 500px;
+        }
+        #second{
+            background-color: green;
+        }
+        #minute{
+            background-color: red;
+        }
+        #hour{
+            background-color: purple;
+        }
+        
+    </style>
+<script>
+const secondHand = document.querySelector('#second');
+const minutHand = document.querySelector('#minute');
+const hourHand = document.querySelector('#hour');
+function setDate(){
+        const now = new Date();
+        const second = now.getSeconds();
+        const minute = now.getMinutes();
+        const hour = now.getHours();
+        const secondDegree = ((second / 60) * 360) + 90;
+        const minutDegree = ((minute / 60) * 360) + 90;
+        var hourDegree = ((hour / 12) * 360) + 90;
+        secondHand.style.transform = `rotate(${secondDegree}deg)`;
+        minutHand.style.transform = `rotate(${minutDegree}deg)`;
+        if (hourDegree > 12){
+            var hourDegree = hourDegree - 12;
+            var hourDegree = ((hourDegree/12) * 360) +90;
+            hourHand.style.tranform = `rotate(${hourDegree}deg)`;
+    }   else if (hourDegree <=12){
+            var hourDegree = ((hourDegree/12) * 360) +90;
+            hourHand.style.tranform = `rotate(${hourDegree}deg)`;           
+    }
+} 
+    setInterval(setDate, 1000);
+</script>
+</html>

@@ -1,0 +1,25 @@
+.key{
+    display:inline-block;
+    border-style: solid;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    transition:all 3s; 
+    cursor: pointer;
+    text-shadow: 0 0 5px black;
+    border-radius:5px;
+  }
+  body{
+    display:table;
+    margin: 350px auto 350px auto;
+    background-color:#FFF8DC;
+  }
+  
+  
+  .playing{
+    transform: scale(3);
+    border-color: yellow;
+    box-shadow: 0 0 10px yellow;
+  }
+  
