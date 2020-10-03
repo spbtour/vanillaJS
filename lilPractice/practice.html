@@ -1,0 +1,36 @@
+<html>
+    <head>
+
+    </head>
+<body>
+
+
+<h1>Objects Creation</h1>    
+<Script>
+var family = {
+    "husband" : "Sangjun",
+    "wife" : "Cathy",
+    "son" : "Taeyang",
+    "daughter" : "Haneul"
+}
+
+// for(key in family){
+//      //   document.write(key + '<br>');
+//        document.write(key+' : '+family[key] + '<br>');
+//     }
+
+family.money = "1 zillion"
+family.happiness = function(){
+    for(key in this){
+     //   document.write(key + '<br>');
+       document.write(key+' : '+this[key] + '<br>');
+    }
+}
+
+ family.happiness();
+
+</Script>
+
+</body>
+
+    </html>
